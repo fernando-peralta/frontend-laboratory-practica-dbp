@@ -3,8 +3,17 @@
 function insertion_sort(numbers) {
 
     //Write your code here
-
-    return [-1];
+    for (let i = 0; i < numbers.length; i++){
+        for (let j = i; j > 0; j--){
+            
+            if (numbers[j] < numbers[j - 1]){
+                let temp = numbers[j];
+                numbers[j] = numbers[j-1];
+                numbers[j-1] = temp;
+            }
+        }
+    }
+    return numbers;
 }
 
 
@@ -12,18 +21,22 @@ function insertion_sort(numbers) {
 // Returns a single integer
 function factorial(number) {
 
-    //Write your code here
-
-    return -1;
+    if (number == 1)
+        return 1;
+    else
+        return number * factorial(number - 1);
 }
 
 // Param number: single integer
 // Returns a single integer
 function fibonacci(number) {
 
-    //Write your code here
-
-    return -1
+    if (number == 0)
+        return 0;
+    else if (number == 1)
+        return 1;
+    else
+        return fibonacci(number - 1) + fibonacci(number - 2);
 }
 
 // Param expression: string containing a mathematical expression
@@ -31,8 +44,7 @@ function fibonacci(number) {
 function evaluation(expression) {
 
     //Write your code here
-
-    return -1
+    return eval(expression);
 }
 
 
